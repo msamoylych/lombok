@@ -71,7 +71,7 @@ class BuilderSingularSets<T> {
 			return this;
 		}
 		@java.lang.SuppressWarnings("all")
-     	public BuilderSingularSets.BuilderSingularSetsBuilder<T> oyster(final Number oyster) {
+		public BuilderSingularSets.BuilderSingularSetsBuilder<T> oyster(final Number oyster) {
 			if (this.oysters == null) this.oysters = new java.util.ArrayList<Number>();
 			this.oysters.add(oyster);
 			return this;
