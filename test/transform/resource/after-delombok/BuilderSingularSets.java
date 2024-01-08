@@ -1,13 +1,15 @@
+import java.util.SequencedSet;
 import java.util.Set;
 import java.util.SortedSet;
 class BuilderSingularSets<T> {
 	private Set<T> dangerMice;
 	private SortedSet<? extends Number> octopodes;
+	private SequencedSet<? extends Number> oysters;
 	@SuppressWarnings("all")
 	private Set rawSet;
 	private Set<String> stringSet;
 	@java.lang.SuppressWarnings("all")
-	BuilderSingularSets(final Set<T> dangerMice, final SortedSet<? extends Number> octopodes, final Set rawSet, final Set<String> stringSet) {
+	BuilderSingularSets(final Set<T> dangerMice, final SortedSet<? extends Number> octopodes, final SequencedSet<? extends Number> oysters, final Set rawSet, final Set<String> stringSet) {
 		this.dangerMice = dangerMice;
 		this.octopodes = octopodes;
 		this.rawSet = rawSet;
@@ -19,6 +21,8 @@ class BuilderSingularSets<T> {
 		private java.util.ArrayList<T> dangerMice;
 		@java.lang.SuppressWarnings("all")
 		private java.util.ArrayList<Number> octopodes;
+		@java.lang.SuppressWarnings("all")
+		private java.util.ArrayList<Number> oysters;
 		@java.lang.SuppressWarnings("all")
 		private java.util.ArrayList<java.lang.Object> rawSet;
 		@java.lang.SuppressWarnings("all")
@@ -64,6 +68,26 @@ class BuilderSingularSets<T> {
 		@java.lang.SuppressWarnings("all")
 		public BuilderSingularSets.BuilderSingularSetsBuilder<T> clearOctopodes() {
 			if (this.octopodes != null) this.octopodes.clear();
+			return this;
+		}
+		@java.lang.SuppressWarnings("all")
+     	public BuilderSingularSets.BuilderSingularSetsBuilder<T> oyster(final Number oyster) {
+			if (this.oysters == null) this.oysters = new java.util.ArrayList<Number>();
+			this.oysters.add(oyster);
+			return this;
+		}
+		@java.lang.SuppressWarnings("all")
+		public BuilderSingularSets.BuilderSingularSetsBuilder<T> oysters(final java.util.Collection<? extends Number> oysters) {
+			if (oysters == null) {
+				throw new java.lang.NullPointerException("oysters cannot be null");
+			}
+			if (this.oysters == null) this.oysters = new java.util.ArrayList<Number>();
+			this.oysters.addAll(oysters);
+			return this;
+		}
+		@java.lang.SuppressWarnings("all")
+		public BuilderSingularSets.BuilderSingularSetsBuilder<T> clearOysters() {
+			if (this.oysters != null) this.oysters.clear();
 			return this;
 		}
 		@java.lang.SuppressWarnings("all")
@@ -124,6 +148,9 @@ class BuilderSingularSets<T> {
 			java.util.SortedSet<Number> octopodes = new java.util.TreeSet<Number>();
 			if (this.octopodes != null) octopodes.addAll(this.octopodes);
 			octopodes = java.util.Collections.unmodifiableSortedSet(octopodes);
+			java.util.SequencedSet<Number> oysters = new java.util.LinkedHashSet<Number>();
+			if (this.oysters != null) oysters.addAll(this.oysters);
+			oysters = java.util.Collections.unmodifiableSequencedSet(oysters);
 			java.util.Set<java.lang.Object> rawSet;
 			switch (this.rawSet == null ? 0 : this.rawSet.size()) {
 			case 0: 
@@ -150,12 +177,12 @@ class BuilderSingularSets<T> {
 				stringSet.addAll(this.stringSet);
 				stringSet = java.util.Collections.unmodifiableSet(stringSet);
 			}
-			return new BuilderSingularSets<T>(dangerMice, octopodes, rawSet, stringSet);
+			return new BuilderSingularSets<T>(dangerMice, octopodes, oysters, rawSet, stringSet);
 		}
 		@java.lang.Override
 		@java.lang.SuppressWarnings("all")
 		public java.lang.String toString() {
-			return "BuilderSingularSets.BuilderSingularSetsBuilder(dangerMice=" + this.dangerMice + ", octopodes=" + this.octopodes + ", rawSet=" + this.rawSet + ", stringSet=" + this.stringSet + ")";
+			return "BuilderSingularSets.BuilderSingularSetsBuilder(dangerMice=" + this.dangerMice + ", octopodes=" + this.octopodes + ", oysters=" + this.oysters + ", rawSet=" + this.rawSet + ", stringSet=" + this.stringSet + ")";
 		}
 	}
 	@java.lang.SuppressWarnings("all")
