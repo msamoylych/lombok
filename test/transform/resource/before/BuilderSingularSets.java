@@ -1,3 +1,4 @@
+import java.util.SequencedSet;
 import java.util.Set;
 import java.util.SortedSet;
 
@@ -7,6 +8,7 @@ import lombok.Singular;
 class BuilderSingularSets<T> {
 	@Singular private Set<T> dangerMice;
 	@Singular private SortedSet<? extends Number> octopodes;
+	@Singular private SequencedSet<? extends Number> oysters;
 	@SuppressWarnings("all") @Singular("rawSet") private Set rawSet;
 	@Singular("stringSet") private Set<String> stringSet;
 }
